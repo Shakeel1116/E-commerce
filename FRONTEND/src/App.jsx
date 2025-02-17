@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './Pages/Navbar';
 import { Routes, Route, Router } from 'react-router-dom'; 
-import HeroSection from './Pages/Herosection';
+import HeroSection from  './Pages/HeroSection';
 import FooterSection from './Pages/FooterSection';
 import WomensSection from './Navcategorypages/WomensSection';
 import Kidssection from './Navcategorypages/Kidssection';
