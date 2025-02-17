@@ -27,7 +27,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:9000/api/auth/signup", {
+      const response = await fetch("https://e-commerce-3l3n.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
