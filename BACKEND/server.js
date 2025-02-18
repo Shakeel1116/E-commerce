@@ -11,7 +11,11 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 // ✅ Fix CORS issue: Allow frontend (http://localhost:3000) to access backend
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({
+  origin: ["http://localhost:5173", "https://e-commerce-gold-xi-71.vercel.app"],
+  credentials: true
+}));
+
 app.use(express.json()); // Middleware to parse JSON data
 
 // ✅ Authentication Routes
