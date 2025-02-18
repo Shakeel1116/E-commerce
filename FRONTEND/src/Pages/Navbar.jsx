@@ -96,33 +96,34 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li 
-                        onMouseEnter={() => setShowCollections(true)}
-                        onMouseLeave={() => setShowCollections(false)}
-                    >
-                        New Collections ▶
-                        {showCollections && (
-                            <ul className="nested-list">
-                                <li>Men Shirts</li>
-                                <li>Women Dresses</li>
-                                <li>Men Trousers</li>
-                                <li>Women Tops</li>
-                                <li>Women Sarees</li>
-                                <li>Men Tracks</li>
-                                <li>Kids Wear</li>
-                                <li>Watches</li>
-                            </ul>
-                        )}
-                    </li>
-                    <li><Link to="/menswear">Mens Wear</Link></li>
-                    <li><Link to="/womenswear">Womens Wear</Link></li>
-                    <li><Link to="/kidswear">Kids Wear</Link></li>
-                    <li><Link to="/footwear">Foot Wear</Link></li>
-                    <li><Link to="/accessories">Accessories</Link></li>
+    <ul>
+        <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+        <li
+            onMouseEnter={() => setShowCollections(true)}
+            onMouseLeave={() => setShowCollections(false)}
+        >
+            New Collections ▶
+            {showCollections && (
+                <ul className="nested-list">
+                    <li>Men Shirts</li>
+                    <li>Women Dresses</li>
+                    <li>Men Trousers</li>
+                    <li>Women Tops</li>
+                    <li>Women Sarees</li>
+                    <li>Men Tracks</li>
+                    <li>Kids Wear</li>
+                    <li>Watches</li>
                 </ul>
-            </div>
+            )}
+        </li>
+        <li><Link to="/menswear" onClick={() => setMenuOpen(false)}>Mens Wear</Link></li>
+        <li><Link to="/womenswear" onClick={() => setMenuOpen(false)}>Womens Wear</Link></li>
+        <li><Link to="/kidsswear" onClick={() => setMenuOpen(false)}>Kids Wear</Link></li>
+        <li><Link to="/Footswear" onClick={() => setMenuOpen(false)}>Foot Wear</Link></li>
+        <li><Link to="/Accesories" onClick={() => setMenuOpen(false)}>Accessories</Link></li>
+    </ul>
+</div>
+
         </nav>
     );
 };

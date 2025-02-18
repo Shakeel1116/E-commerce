@@ -455,6 +455,14 @@ h1 {
 .back-btn:hover {
     background: #0056b3;
 }
+.mobile-menu a {
+    color:black;
+    text-decoration: none;  /* Removes the text decoration */
+    display: block;
+}
+.mobile-menu {
+    width: 60%; 
+}
 
 
 
@@ -633,7 +641,73 @@ h1 {
   .Herosection {
     flex: 1; /* Let products take remaining space */
   }
+  @media (max-width: 768px) {
+    /* Adjusting the filter section */
+    .filters {
+      width: 100%; /* Make filter take full width on mobile */
+      margin-bottom: 20px; /* Add space between filters and products */
+      padding: 15px; /* Increase padding for better spacing */
+    }
   
+    .filter-item button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .filter-content {
+      padding: 8px;
+    }
+  
+    .filter-content label {
+      padding: 5px;
+      font-size: 13px;
+    }
+  
+    .filter-item {
+      margin-bottom: 15px; /* Add more space between filter items */
+    }
+  
+    .filter-item button {
+      font-size: 16px;
+    }
+  
+    /* Adjust the layout of the product section */
+    .mens-section, .womens-section, .kids-section, .footwear-section, .Accesories-section {
+      flex-direction: column; /* Stack products vertically on small screens */
+      gap: 15px;
+    }
+    
+    /* Make products full width */
+    .Mensclothing {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Adjust for even smaller screens like mobile */
+    .filters {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .filter-item button {
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    .filter-content {
+      padding: 8px;
+    }
+  
+    .filter-content label {
+      font-size: 12px;
+    }
+  
+    /* Ensure the product grid takes full width */
+    .Mensclothing {
+      width: 100%;
+    }
+  }
 .industry-banner {
     text-align: center;
     margin: 20px 0;
