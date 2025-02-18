@@ -13,7 +13,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError(""); // Reset error state
 
     if (!formData.name || !formData.email || !formData.password) {
       setError("⚠️ All fields are required!");
@@ -27,8 +27,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("https://e-commerce-3l3n.onrender.com/api/auth/signup",
-        {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -44,9 +43,9 @@ const Signup = () => {
       setFormData({ name: "", email: "", password: "" });
       navigate("/login");
     } catch (err) {
-      setError(err.message);
+      setError(err.message); // Set error message if API call fails
     } finally {
-      setLoading(false);
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -56,14 +55,39 @@ const Signup = () => {
         <h2>Sign Up</h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
-          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-          <input type="password" name="password" placeholder="Password (Min 6 chars)" value={formData.password} onChange={handleChange} required />
-          <button type="submit" disabled={loading}>{loading ? "Signing Up..." : "Sign Up"}</button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password (Min 6 chars)"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? "Signing Up..." : "Sign Up"}
+          </button>
         </form>
         <div className="links">
           <Link to="/forgotpass">Forgot Password?</Link>
-          <p>Already registered? <Link to="/login">Login</Link></p>
+          <p>
+            Already registered? <Link to="/login">Login</Link>
+          </p>
         </div>
       </div>
     </div>
